@@ -61,6 +61,8 @@ console.log('c')
    ```
 
    好处是写起来比较无脑，坏处是读起来反人类。并且高度耦合。
+   
+   
 
 2. 事件监听
 
@@ -111,6 +113,10 @@ console.log('c')
 4. promise
 
    battle赢家，在es6中被引入。
+   
+              |→resolved ： then 处理回调
+   pending ->
+              |→rejected ： catch 处理错误
 
    一般的实现：
 
