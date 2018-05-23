@@ -115,7 +115,9 @@ console.log('c')
    battle赢家，在es6中被引入。
    
               |→resolved ： then 处理回调
+              
    pending ->
+   
               |→rejected ： catch 处理错误
 
    一般的实现：
@@ -228,6 +230,24 @@ console.log('c')
 
 6. async
 
+    async和await替换\*和yield
+
+   ```
+    function timeout(ms) {
+      return new Promise((resolve) => {
+      console.log(ms);
+        setTimeout(resolve, ms);
+      });
+    }
+
+    async function asyncPrint(value, ms) {
+      await timeout(ms);
+     await timeout(ms*2);
+      console.log(value)
+    }
+    asyncPrint('hello world', 500);
+   ```
+   
    ```
    var fs = require('fs');
 
@@ -254,22 +274,6 @@ console.log('c')
      console.log(f1.toString());
      console.log(f2.toString());
    };
-   ```
-
-   ```
-   function timeout(ms) {
-     return new Promise((resolve) => {
-       setTimeout(resolve, ms);
-     });
-   }
-
-   async function asyncPrint(value, ms) {
-     await timeout(ms);
-     console.log(value)
-     return 11;
-   }
-
-    asyncPrint('hello world', 50);
    ```
 
    比较generator:
